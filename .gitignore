@@ -1,4 +1,10 @@
-/resources/assets/bower_components
-/resources/assets/node_modules
-/vendor
-.idea
+*
+!app
+!bootstrap
+!config
+!database
+!public
+!resources
+!tests
+!README.md
+!LICENSE
