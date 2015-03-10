@@ -16,11 +16,11 @@
 	<script src="{{ URL::asset('assets/vendor/angular/angular.min.js') }}"></script>
 	<script src="{{ URL::asset('assets/vendor/angular/angular-resource.min.js') }}"></script>
 	<script src="{{ URL::asset('assets/vendor/angular/angular-route.min.js') }}"></script>
-	<script src="{{ URL::asset('assets/js/app/app.js') }}"></script>
-	<script src="{{ URL::asset('assets/js/app/routes.js') }}"></script>
-	<script src="{{ URL::asset('assets/js/app/controllers/userController.js') }}"></script>
-	<script src="{{ URL::asset('assets/js/app/controllers/companyController.js') }}"></script>
-	<script src="{{ URL::asset('assets/js/app/services/userService.js') }}"></script>
-	<script src="{{ URL::asset('assets/js/app/services/companyService.js') }}"></script>
+	<script src="{{ URL::asset('assets/js/app/app.module.js') }}"></script>
+	<script src="{{ URL::asset('assets/js/app/route.config.js') }}"></script>
+	<script src="{{ URL::asset('assets/js/app/controllers/user.js') }}"></script>
+	<script src="{{ URL::asset('assets/js/app/controllers/company.js') }}"></script>
+	<script src="{{ URL::asset('assets/js/app/services/userDataservice.js') }}"></script>
+	<script src="{{ URL::asset('assets/js/app/services/companyDataservice.js') }}"></script>
 </body>
 </html>

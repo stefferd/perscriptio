@@ -1,6 +1,17 @@
-/**
- * Created by stefvandenberg on 09/03/15.
- */
-perscriptio.controller('CompanyController', ['$scope', 'CompanyService', function($scope, CompanyService) {
-    $scope.companies = CompanyService.query();
-}]);
+(function() {
+    'use strict';
+
+    angular
+        .module('perscriptio')
+        .controller('Company', Company);
+
+    Company.$inject = ['$scope', 'CompanyService'];
+
+    function Company($scope, CompanyService) {
+        var vm = this;
+        this.companies = CompanyService.query();
+    }
+
+})();
+
+

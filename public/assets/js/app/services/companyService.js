@@ -2,10 +2,29 @@
  * Created by stefvandenberg on 09/03/15.
  */
 
-perscriptioServices.factory('CompanyService', ['$resource',
-    function($resource){
-        return $resource('http://localhost:8888/Development/perscriptio/public/api/v1/company', {}, {
-            query: { method:'GET', isArray: true }
-        });
+(function() {
+    'use strict';
+
+    angular
+        .module('perscriptio')
+        .factory('CompanyDataservice', CompanyDataservice);
+
+    CompanyDataservice.$inject('$resource');
+
+    function CompanyDataservice($resource) {
+
+        var service = {
+            get: get
+        };
+        return service;
+
+        ////////////
+
+        function get() {
+            return $resource('http://localhost:8888/Development/perscriptio/public/api/v1/company', {}, {
+                query: { method:'GET', isArray: true }
+            });
+        }
+
     }
-]);
+})();
