@@ -1,10 +1,10 @@
 *
-!app
-!bootstrap
-!config
-!database
-!public
-!resources
-!tests
+!app/*
+!bootstrap/*
+!config/*
+!database/*
+!public/*
+!resources/*
+!tests/*
 !README.md
 !LICENSE
