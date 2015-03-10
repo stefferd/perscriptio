@@ -7,11 +7,11 @@
 
     angular
         .module('perscriptio')
-        .factory('UserDataservice', UserDataservice);
+        .factory('user', user);
 
-    UserDataservice.$inject = ['$http'];
+    user.$inject = ['$http'];
 
-    function UserDataservice($http) {
+    function user($http) {
 
         return {
             getUsers: getUsers

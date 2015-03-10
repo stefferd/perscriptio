@@ -6,11 +6,11 @@
 
     angular
         .module('perscriptio')
-        .controller('User', User);
+        .controller('UserController', UserController);
 
-    User.$inject = ['$scope', 'UserDataservice'];
+    UserController.$inject = ['$scope', 'user'];
 
-    function User($scope, UserDataservice) {
+    function UserController($scope, user) {
         var vm = this;
         vm.users = [];
 
@@ -23,7 +23,7 @@
         }
 
         function getUsers() {
-            return UserDataservice.getUsers()
+            return user.getUsers()
                 .then(function(data) {
                     vm.users = data;
                     return vm.users;

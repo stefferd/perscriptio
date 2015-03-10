@@ -3,11 +3,11 @@
 
     angular
         .module('perscriptio')
-        .controller('Company', Company);
+        .controller('CompanyController', Company);
 
-    Company.$inject = ['$scope', 'CompanyDataservice'];
+    CompanyController.$inject = ['$scope', 'company'];
 
-    function Company($scope, CompanyDataservice) {
+    function CompanyController($scope, company) {
         var vm = this;
         vm.companies = [];
 
@@ -20,7 +20,7 @@
         }
 
         function getCompanies() {
-            return CompanyDataservice.getCompanies()
+            return company.getCompanies()
                 .then(function(data) {
                     vm.companies = data;
                     return vm.companies;
