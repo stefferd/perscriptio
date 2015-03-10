@@ -1,0 +1,5 @@
+suites:
+    main:
+        namespace: Perscriptio
+        psr4_prefix: Perscriptio
+        src_path: app

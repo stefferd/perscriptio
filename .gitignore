@@ -1,0 +1,4 @@
+/resources/assets/bower_components
+/resources/assets/node_modules
+/vendor
+.idea
