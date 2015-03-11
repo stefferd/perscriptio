@@ -17,10 +17,9 @@
 	<script src="{{ URL::asset('assets/vendor/angular/angular-resource.min.js') }}"></script>
 	<script src="{{ URL::asset('assets/vendor/angular/angular-route.min.js') }}"></script>
 	<script src="{{ URL::asset('assets/js/app/app.module.js') }}"></script>
-	<script src="{{ URL::asset('assets/js/app/route.config.js') }}"></script>
-	<script src="{{ URL::asset('assets/js/app/controllers/user.js') }}"></script>
-	<script src="{{ URL::asset('assets/js/app/controllers/company.js') }}"></script>
-	<script src="{{ URL::asset('assets/js/app/services/userDataservice.js') }}"></script>
-	<script src="{{ URL::asset('assets/js/app/services/companyDataservice.js') }}"></script>
+	<script src="{{ URL::asset('assets/js/app/app.config.js') }}"></script>
+	<script src="{{ URL::asset('assets/js/app/services/dataservice.service.js') }}"></script>
+	<script src="{{ URL::asset('assets/js/app/users/user.controller.js') }}"></script>
+	<script src="{{ URL::asset('assets/js/app/companies/company.controller.js') }}"></script>
 </body>
 </html>

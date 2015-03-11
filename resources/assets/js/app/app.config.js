@@ -9,13 +9,13 @@ angular
 function config($routeProvider) {
     $routeProvider.
         when('/', {
-            templateUrl: 'assets/js/app/partials/user/list.html',
-            controller: 'User',
+            templateUrl: 'assets/js/app/users/user.html',
+            controller: 'UserController',
             controllerAs: 'vm'
         }).
         when('/company', {
-            templateUrl: 'assets/js/app/partials/company/list.html',
-            controller: 'Company',
+            templateUrl: 'assets/js/app/companies/company.html',
+            controller: 'CompanyController',
             controllerAs: 'vm'
         }).
         otherwise({

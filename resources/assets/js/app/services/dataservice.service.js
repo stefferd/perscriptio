@@ -25,7 +25,7 @@
         }
 
         function getUsers() {
-            return $http.get('http://localhost:8888/Development/perscriptio/public/api/v1/company')
+            return $http.get('http://localhost:8888/Development/perscriptio/public/api/v1/user')
                 .then(getComplete)
                 .catch(getFailed);
         }
