@@ -1,0 +1,28 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="well" ng-if="vm.message != ''">{{vm.message}}</div>
+        <div class="columns">
+            <table class="table table-border" cellspacing="0" cellpadding="0">
+                <thead>
+                <th>#</th>
+                <th>Name</th>
+                <th></th>
+                <th></th>
+                <th></th>
+                </thead>
+                <tbody>
+                <tr data-ng-repeat="project in vm.projects">
+                    <td>{{project.id}}</td>
+                    <td>{{project.title}}</td>
+                    <td><a href="#/projects/detail/{{project.id}}" title="Project bekijken">Bekijken</a></td>
+                    <td><a href="#/projects/edit/{{project.id}}" title="Project bewerken">Bewerken</a></td>
+                    <td><a ng-click="delete(project)" title="Project verwijderen">Verwijderen</a></td>
+                </tr>
+                </tbody>
+            </table>
+            <a href="#/user">Gebruikers</a>
+            <a href="#/company">Projecten</a>
+            <a href="#/projects/add/">Project toevoegen</a>
+        </div>
+    </div>
+</div>
