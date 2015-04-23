@@ -3,5 +3,5 @@
  */
 
 angular.
-    module('perscriptio', ['ngRoute']);
+    module('perscriptio', ['ngRoute', 'perscriptio.shared', 'perscriptio.core', 'perscriptio.front']);
 

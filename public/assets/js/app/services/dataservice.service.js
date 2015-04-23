@@ -12,20 +12,29 @@
     dataservice.$inject = ['$http'];
 
     function dataservice($http) {
+        var vm = this;
+        vm.serviceUri = 'http://localhost:8888/Development/perscriptio-git/public/api/v1/';
 
         return {
-            getCompanies: getCompanies,
-            getUsers: getUsers
+            post: postData,
+            get: getData,
+            delete: deleteData
         };
 
-        function getCompanies() {
-            return $http.get('http://localhost:8888/Development/perscriptio/public/api/v1/company')
+        function getData(method) {
+            return $http.get(vm.serviceUri + method)
                 .then(getComplete)
                 .catch(getFailed);
         }
 
-        function getUsers() {
-            return $http.get('http://localhost:8888/Development/perscriptio/public/api/v1/user')
+        function postData(method, data) {
+            return $http.post(vm.serviceUri + method, data)
+                .then(getComplete)
+                .catch(getFailed);
+        }
+
+        function deleteData(method, data) {
+            return $http.delete(vm.serviceUri + method + '/' + data)
                 .then(getComplete)
                 .catch(getFailed);
         }
@@ -35,7 +44,7 @@
         }
 
         function getFailed(error) {
-            logger.error('XHR Failed for:' + error.data);
+            console.error('XHR Failed for:' + error.data);
         }
     }
 })();

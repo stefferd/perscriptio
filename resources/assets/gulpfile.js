@@ -13,15 +13,31 @@ gulp.task('build', function() {
 
     // Copy the angular resources
     gulp.src([
-        './bower_components/angular/angular.min.js',
-        './bower_components/angular/angular.min.js.map',
-        './bower_components/angular-resource/angular-resource.min.js',
-        './bower_components/angular-resource/angular-resource.min.js.map',
-        './bower_components/angular-route/angular-route.min.js',
-        './bower_components/angular-route/angular-route.min.js.map']
+        './js/app/components/angular/angular.min.js',
+        './js/app/components/angular/angular.min.js.map',
+        './js/app/components/angular-resource/angular-resource.min.js',
+        './js/app/components/angular-resource/angular-resource.min.js.map',
+        './js/app/components/angular-route/angular-route.min.js',
+        './js/app/components/angular-route/angular-route.min.js.map']
     ).pipe(gulp.dest('../../public/assets/vendor/angular/'));
 
-    gulp.src('./js/app/**/*').pipe(gulp.dest('../../public/assets/js/app/'));
+    // Copy the angular resources
+    gulp.src([
+            './js/app/components/angular-ui-bootstrap/src/timepicker/timepicker.js',
+            './js/app/components/angular-ui-bootstrap/template/timepicker/timepicker.html'
+            ]
+    ).pipe(gulp.dest('../../public/assets/vendor/angular-ui-bootstrap/timepicker/'));
+
+    // Copy the bootstrap resources
+    gulp.src([
+            './js/app/components/bootstrap/dist/js/bootstrap.min.js',
+            './js/app/components/bootstrap/dist/css/bootstrap.min.css',
+        ]
+    ).pipe(gulp.dest('../../public/assets/vendor/bootstrap/'));
+
+    gulp.src('./js/app/components/bootstrap/dist/fonts/*').pipe(gulp.dest('../../public/assets/vendor/bootstrap/fonts/'));
+
+    gulp.src(['!./js/app/components/**/*', './js/app/**/*']).pipe(gulp.dest('../../public/assets/js/app/'));
 });
 
 gulp.task('test', function() {

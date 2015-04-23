@@ -1,3 +1,5 @@
+@import 'colors';
+
 * {
   padding: 0;
   margin: 0
@@ -5,6 +7,65 @@
 
 html, body {
   font: 1.0em/1.4em "Helvetica Neue", Arial, sans-serif;
-  color: #2D2D2D;
+  color: $font;
 }
+
+.container, .container-fluid {
+  margin: 0 auto;
+  display: block;
+
+  .row {
+    width: 100%;
+    display: block;
+
+    .columns {
+      display: inline-block;
+      vertical-align: top;
+      width: 100%;
+    }
+  }
+}
+.container-fluid {
+  width: 100%;
+}
+.container {
+  width: 1024px;
+
+}
+
+/*--------- Tables ----------- */
+.table {
+  width: 100%;
+  padding: 10px 0;
+
+  thead th, tbody td {
+    padding: 5px 0;
+    text-indent: 5px;
+    margin: 0;
+  }
+
+  thead {
+    th {
+      text-align: left;
+      font-size: 15px;
+    }
+  }
+
+  tbody {
+    td {
+      font-size: 13px;
+    }
+  }
+
+  &.table-border {
+    thead th {
+      border-bottom: 2px solid $border-darker;
+    }
+    tbody td {
+      border-bottom: 1px solid $border;
+    }
+  }
+}
+
+
 

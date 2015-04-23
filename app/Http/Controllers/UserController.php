@@ -1,10 +1,14 @@
 <?php namespace Perscriptio\Http\Controllers;
 
+use Auth;
+use Hash;
 use Perscriptio\Http\Requests;
 use Perscriptio\Http\Controllers\Controller;
 use Perscriptio\User;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
+use Symfony\Component\HttpFoundation\Response;
 
 class UserController extends Controller {
 
@@ -27,6 +31,35 @@ class UserController extends Controller {
 	public function create()
 	{
 		//
+	}
+
+	public function login(Request $request) {
+		if (Auth::attempt(['email' => $request->input('email'), 'password' => $request->input('password')])) {
+			$user = Auth::getUser();
+			$response = array(
+				'operation' => true,
+				'message' => 'Login successfull',
+				'user' => array(
+					'name' => $user->name,
+					'role' => $user->groups
+				)
+			);
+			return Response::create(json_encode($response , 200));
+		}
+		$response = array(
+			'operation' => false,
+			'message' => 'Username and password not correct'
+		);
+		return Response::create(json_encode($response), 401);
+	}
+
+	public function logout() {
+		Auth::logout();
+		$response = array(
+			'operation' => true,
+			'message' => 'Logout succesfull'
+		);
+		return Response::create(json_encode($response), 200);
 	}
 
 	/**
