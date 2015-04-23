@@ -1,38 +1,62 @@
 <!DOCTYPE html>
-<html lang="nl" data-ng-app="perscriptio">
+<html lang="nl" data-ng-app="app">
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Perscriptio</title>
-	<link href="{{ URL::asset('assets/vendor/bootstrap/bootstrap.min.css') }}" rel="stylesheet" />
-	<link href="{{ URL::asset('assets/css/app.css') }}" rel="stylesheet" />
+    <base href="/" />
 </head>
 <body>
-	<dex-navigation></dex-navigation>
-	<div class="container" data-ng-view></div>
-	<!-- Scripts -->
-	<script src="{{ URL::asset('assets/vendor/angular/angular.min.js') }}"></script>
-	<script src="{{ URL::asset('assets/vendor/angular/angular-resource.min.js') }}"></script>
-	<script src="{{ URL::asset('assets/vendor/angular/angular-route.min.js') }}"></script>
-    <script src="{{ URL::asset('assets/vendor/angular-ui-bootstrap/timepicker/timepicker.js') }}"></script>
-	<script src="{{ URL::asset('assets/js/app/app.module.js') }}"></script>
-	<script src="{{ URL::asset('assets/js/app/app.config.js') }}"></script>
-	<script src="{{ URL::asset('assets/js/app/core/core.module.js') }}"></script>
-	<script src="{{ URL::asset('assets/js/app/core/core.config.js') }}"></script>
-	<script src="{{ URL::asset('assets/js/app/core/start/start.controller.js') }}"></script>
-	<script src="{{ URL::asset('assets/js/app/shared/shared.module.js') }}"></script>
-	<script src="{{ URL::asset('assets/js/app/shared/authentication/authentication.service.js') }}"></script>
-	<script src="{{ URL::asset('assets/js/app/shared/navigation/navigation.directive.js') }}"></script>
-	<script src="{{ URL::asset('assets/js/app/shared/localstorage.service.js') }}"></script>
-	<script src="{{ URL::asset('assets/js/app/shared/session.service.js') }}"></script>
-	<script src="{{ URL::asset('assets/js/app/shared/dataservice.service.js') }}"></script>
-	<script src="{{ URL::asset('assets/js/app/front/front.module.js') }}"></script>
-	<script src="{{ URL::asset('assets/js/app/front/front.config.js') }}"></script>
-	<script src="{{ URL::asset('assets/js/app/front/dashboard/dashboard.controller.js') }}"></script>
-	<script src="{{ URL::asset('assets/js/app/front/users/user.controller.js') }}"></script>
-	<script src="{{ URL::asset('assets/js/app/front/companies/company.controller.js') }}"></script>
-	<script src="{{ URL::asset('assets/js/app/front/companies/overview.directive.js') }}"></script>
-	<script src="{{ URL::asset('assets/js/app/front/projects/project.controller.js') }}"></script>
+    <div>
+        <div ng-include="app/layout/shell.html"></div>
+        <div id="splash-page" ng-show="showSplash">
+            <div class="page-splash">
+                <div class="page-splash-message">
+                    Perscriptio
+                </div>
+                <div class="progress progress-striped active page-progress-bar">
+                    <div class="bar"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Resources -->
+    <script src="{{ URL::asset('assets/lib/angular/angular.js') }}"></script>
+    <script src="{{ URL::asset('assets/lib/angular-animate/angular-animate.js') }}"></script>
+    <script src="{{ URL::asset('assets/lib/angular-aria/angular-aria.js') }}"></script>
+    <script src="{{ URL::asset('assets/lib/angular-material/angular-material.js') }}"></script>
+    <script src="{{ URL::asset('assets/lib/angular-sanitize/angular-sanitize.js') }}"></script>
+    <script src="{{ URL::asset('assets/lib/angular-ui-router/release/angular-ui-router.js') }}"></script>
+    <script src="{{ URL::asset('assets/lib/moment/moment.js') }}"></script>
+    <!-- Bootstrap off the app -->
+    <script src="{{ URL::asset('assets/app/app.module.js') }}"></script>
+    <!-- app.core -->
+    <script src="{{ URL::asset('assets/app/core/core.module.js') }}"></script>
+    <script src="{{ URL::asset('assets/app/core/config.js') }}"></script>
+    <script src="{{ URL::asset('assets/app/core/constants.js') }}"></script>
+    <script src="{{ URL::asset('assets/app/core/core.route.js') }}"></script>
+    <script src="{{ URL::asset('assets/app/core/dataservice.js') }}"></script>
+    <!-- app.blocks -->
+    <script src="{{ URL::asset('assets/app/blocks/exception/exception.module.js') }}"></script>
+    <script src="{{ URL::asset('assets/app/blocks/exception/exception-handler.provider.js') }}"></script>
+    <script src="{{ URL::asset('assets/app/blocks/exception/exception.js') }}"></script>
+    <script src="{{ URL::asset('assets/app/blocks/logger/logger.module.js') }}"></script>
+    <script src="{{ URL::asset('assets/app/blocks/logger/logger.js') }}"></script>
+    <script src="{{ URL::asset('assets/app/blocks/router/router.module.js') }}"></script>
+    <script src="{{ URL::asset('assets/app/blocks/router/router-helper.provider.js') }}"></script>
+    <!-- app.dashboard -->
+    <script src="{{ URL::asset('assets/app/dashboard/dashboard.module.js') }}"></script>
+    <script src="{{ URL::asset('assets/app/dashboard/dashboard.route.js') }}"></script>
+    <script src="{{ URL::asset('assets/app/dashboard/dashboard.controller.js') }}"></script>
+    <!-- app.layout -->
+    <script src="{{ URL::asset('assets/app/layout/layout.module.js') }}"></script>
+    <script src="{{ URL::asset('assets/app/layout/ps-sidebar.directive.js') }}"></script>
+    <script src="{{ URL::asset('assets/app/layout/shell.controller.js') }}"></script>
+    <script src="{{ URL::asset('assets/app/layout/sidebar.controller.js') }}"></script>
+    <!-- app.widgets -->
+    <script src="{{ URL::asset('assets/app/widgets/widgets.module.js') }}"></script>
+    <script src="{{ URL::asset('assets/app/widgets/ps-img-person.directive.js') }}"></script>
+    <script src="{{ URL::asset('assets/app/widgets/ps-widget-header.directive.js') }}"></script>
 </body>
 </html>

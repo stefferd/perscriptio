@@ -8,3 +8,5 @@
 !tests/*
 !README.md
 !LICENSE
+resources/assets/node_modules/*
+resources/assets/src/lib/*
