@@ -52,12 +52,24 @@ return [
 			'prefix'   => '',
 		],
 
-		'mysql' => [
+//		'mysql' => [
+//			'driver'    => 'mysql',
+//			'host'      => env('DB_HOST', 'localhost'),
+//			'database'  => env('DB_DATABASE', 'forge'),
+//			'username'  => env('DB_USERNAME', 'forge'),
+//			'password'  => env('DB_PASSWORD', ''),
+//			'charset'   => 'utf8',
+//			'collation' => 'utf8_unicode_ci',
+//			'prefix'    => '',
+//			'strict'    => false,
+//		],
+
+        'mysql' => [
 			'driver'    => 'mysql',
-			'host'      => env('DB_HOST', 'localhost'),
-			'database'  => env('DB_DATABASE', 'forge'),
-			'username'  => env('DB_USERNAME', 'forge'),
-			'password'  => env('DB_PASSWORD', ''),
+            'host'      => '188.166.26.136',
+            'database'  => 'perscriptio',
+            'username'  => 'forge',
+            'password'  => 'EKsKV72dH50MVQn5p1da',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
