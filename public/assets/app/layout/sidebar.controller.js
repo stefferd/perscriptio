@@ -5,12 +5,20 @@
         .module('app.layout')
         .controller('SidebarController', SidebarController);
 
-    SidebarController.$inject = ['$state', 'routerHelper'];
+    SidebarController.$inject = ['$state', 'routerHelper', 'logger', '$mdSidenav'];
     /* @ngInject */
-    function SidebarController($state, routerHelper) {
+    function SidebarController($state, routerHelper, logger, $mdSidenav) {
         var vm = this;
         var states = routerHelper.getStates();
         vm.isCurrent = isCurrent;
+        vm.close = closeSidebar;
+
+        function closeSidebar() {
+            $mdSidenav('left').close()
+                .then(function () {
+                    logger.info('close LEFT is done');
+                });
+        }
 
         activate();
 

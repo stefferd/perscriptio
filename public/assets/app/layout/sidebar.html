@@ -1,2 +1,16 @@
 ﻿<div ng-controller="SidebarController as vm">
+    <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-open="true">
+        <md-toolbar class="md-theme-grey">
+            <h1 class="md-toolbar-tools">Sidenav Left</h1>
+        </md-toolbar>
+        <md-content layout-padding>
+            <md-button ng-click="vm.close()" class="md-primary">
+                Sluiten
+            </md-button>
+            <p hide-md show-gt-md>
+                This sidenav is locked open on your device. To go back to the default behavior,
+                narrow your display.
+            </p>
+        </md-content>
+    </md-sidenav>
 </div>

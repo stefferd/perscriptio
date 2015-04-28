@@ -1,46 +1,51 @@
-<section id="dashboard-view" class="mainbar">
-    <section class="matter">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <ul class="today-datas">
-                        <li class="blightblue">
-                            <div class="pull-left"><i class="fa fa-plane"></i></div>
-                            <div class="datas-text pull-right">
-                                <span class="bold">May 18 - 19, 2015</span> Castle Resort, Neverland
-                            </div>
-                            <div class="clearfix"></div>
-                        </li>
-
-                        <li class="borange">
-                            <div class="pull-left"><i class="fa fa-envelope"></i></div>
-                            <div class="datas-text pull-right">
-                                <span class="bold">{{vm.messageCount}}</span> Messages
-                            </div>
-                            <div class="clearfix"></div>
-                        </li>
-
-                    </ul>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="widget wviolet">
-                        <div class="widget-content text-center text-info">
-                        </div>
-                        <div class="widget-foot">
-                            <div class="clearfix"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="widget wgreen">
-                        <div class="widget-foot">
-                            <div class="clearfix"></div>
-                        </div>
-                    </div>
-                </div>
+<section layout="row" flex>
+    <div ng-include="'assets/app/layout/sidebar.html'"></div>
+    <md-content flex layout-padding>
+        <div layout="column" layout-fill layout-align="top center">
+            <p>
+                The left sidenav will 'lock open' on a medium (>=960px wide) device.
+            </p>
+            <p>
+                The right sidenav will focus on a specific child element.
+            </p>
+            <div>
+                <md-button ng-click="vm.toggleSettings()"
+                           class="md-primary">
+                    Toggle right
+                </md-button>
             </div>
         </div>
-    </section>
+        <div flex>
+            <md-list class="md-default-theme">
+                <h2 class="md-no-sticky md-subhead">Bedrijven</h2>
+                <md-list-item class="md-2-line" ng-repeat="company in vm.companies">
+                    <md-checkbox ng-model="item.done"></md-checkbox>
+                    <div class="md-list-item-text">
+                        <h3>{{::company.name}}</h3>
+                        <p>{{::company.address}}</p>
+                        <p>{{::company.zipcode}}</p>
+                        <p>{{::company.city}}</p>
+                        <p>{{::company.tax}}</p>
+                    </div>
+                </md-list-item>
+            </md-list>
+        </div>
+    </md-content>
+    <md-sidenav class="md-sidenav-right md-whiteframe-z2" md-component-id="settings">
+        <md-toolbar class="md-theme-light">
+            <h1 class="md-toolbar-tools">Sidenav Right</h1>
+        </md-toolbar>
+        <md-content layout-padding>
+            <form>
+                <md-input-container>
+                    <label for="testInput">Test input</label>
+                    <input type="text" id="testInput"
+                           ng-model="data" md-sidenav-focus>
+                </md-input-container>
+            </form>
+            <md-button ng-click="close()" class="md-primary">
+                Close Sidenav Right
+            </md-button>
+        </md-content>
+    </md-sidenav>
 </section>

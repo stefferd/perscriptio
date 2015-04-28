@@ -9,7 +9,7 @@
     /* @ngInject */
     function dataservice($http, $q, logger) {
         var service = {
-            getPeople: getPeople,
+            getCompanies: getCompanies,
             getMessageCount: getMessageCount
         };
 
@@ -17,8 +17,8 @@
 
         function getMessageCount() { return $q.when(72); }
 
-        function getPeople() {
-            return $http.get('/api/people')
+        function getCompanies() {
+            return $http.get('/api/v1/company')
                 .then(success)
                 .catch(fail);
 
@@ -27,7 +27,7 @@
             }
 
             function fail(error) {
-                var msg = 'query for people failed. ' + error.data.description;
+                var msg = 'query for companies failed. ' + error.data.description;
                 logger.error(msg);
                 return $q.reject(msg);
             }
