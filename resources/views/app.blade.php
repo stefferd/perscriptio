@@ -9,8 +9,7 @@
 </head>
 <body>
     <div>
-        <div ng-include="app/layout/shell.html"></div>
-        <div id="splash-page" ng-show="showSplash">
+        <div id="splash-page">
             <div class="page-splash">
                 <div class="page-splash-message">
                     Perscriptio
@@ -20,6 +19,7 @@
                 </div>
             </div>
         </div>
+        <div ui-view></div>
     </div>
     <!-- Resources -->
     <script src="{{ URL::asset('assets/lib/angular/angular.js') }}"></script>
@@ -51,12 +51,9 @@
     <script src="{{ URL::asset('assets/app/dashboard/dashboard.controller.js') }}"></script>
     <!-- app.layout -->
     <script src="{{ URL::asset('assets/app/layout/layout.module.js') }}"></script>
-    <script src="{{ URL::asset('assets/app/layout/ps-sidebar.directive.js') }}"></script>
     <script src="{{ URL::asset('assets/app/layout/shell.controller.js') }}"></script>
     <script src="{{ URL::asset('assets/app/layout/sidebar.controller.js') }}"></script>
     <!-- app.widgets -->
     <script src="{{ URL::asset('assets/app/widgets/widgets.module.js') }}"></script>
-    <script src="{{ URL::asset('assets/app/widgets/ps-img-person.directive.js') }}"></script>
-    <script src="{{ URL::asset('assets/app/widgets/ps-widget-header.directive.js') }}"></script>
 </body>
 </html>
