@@ -5,9 +5,10 @@
         .module('app.core')
         .run(appRun);
 
-    /* @ngInject */
+    appRun.$inject = ['routerHelper'];
+
     function appRun(routerHelper) {
-        var otherwise = '404';
+        var otherwise = '/';
         routerHelper.configureStates(getStates(), otherwise);
     }
 
