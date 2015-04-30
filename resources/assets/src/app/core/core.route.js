@@ -8,7 +8,8 @@
     appRun.$inject = ['routerHelper'];
 
     function appRun(routerHelper) {
-        routerHelper.configureStates(getStates());
+        var otherwise = '/login';
+        routerHelper.configureStates(getStates(), otherwise);
     }
 
     function getStates() {
@@ -19,6 +20,14 @@
                     url: '/404',
                     templateUrl: 'assets/app/core/404.html',
                     title: '404'
+                }
+            },
+            {
+                state: 'login',
+                config: {
+                    url: '/login',
+                    templateUrl: 'assets/app/login/login.html',
+                    title: 'login'
                 }
             }
         ];

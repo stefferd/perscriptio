@@ -9,7 +9,7 @@
     <base href="/" />
 </head>
 <body>
-    <div ui-view layout="column"></div>
+    <div ui-view></div>
     <!-- Resources -->
     <script src="{{ URL::asset('assets/lib/angular/angular.js') }}"></script>
     <script src="{{ URL::asset('assets/lib/angular-animate/angular-animate.js') }}"></script>
@@ -34,14 +34,19 @@
     <script src="{{ URL::asset('assets/app/blocks/logger/logger.js') }}"></script>
     <script src="{{ URL::asset('assets/app/blocks/router/router.module.js') }}"></script>
     <script src="{{ URL::asset('assets/app/blocks/router/router-helper.provider.js') }}"></script>
+    <!-- app.data -->
+    <script src="{{ URL::asset('assets/app/data/data.module.js') }}"></script>
+    <script src="{{ URL::asset('assets/app/data/authentication.js') }}"></script>
     <!-- app.dashboard -->
     <script src="{{ URL::asset('assets/app/dashboard/dashboard.module.js') }}"></script>
     <script src="{{ URL::asset('assets/app/dashboard/dashboard.route.js') }}"></script>
     <script src="{{ URL::asset('assets/app/dashboard/dashboard.controller.js') }}"></script>
     <!-- app.layout -->
     <script src="{{ URL::asset('assets/app/layout/layout.module.js') }}"></script>
-    <script src="{{ URL::asset('assets/app/layout/shell.controller.js') }}"></script>
-    <script src="{{ URL::asset('assets/app/layout/sidebar.controller.js') }}"></script>
+    <!-- app.login -->
+    <script src="{{ URL::asset('assets/app/login/login.module.js') }}"></script>
+    <script src="{{ URL::asset('assets/app/login/login.route.js') }}"></script>
+    <script src="{{ URL::asset('assets/app/login/login.js') }}"></script>
     <!-- app.widgets -->
     <script src="{{ URL::asset('assets/app/widgets/widgets.module.js') }}"></script>
 </body>

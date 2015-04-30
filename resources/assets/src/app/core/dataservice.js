@@ -9,28 +9,33 @@
     /* @ngInject */
     function dataservice($http, $q, logger) {
         var service = {
-            getCompanies: getCompanies,
-            getMessageCount: getMessageCount
+            get: get,
+            post: post,
+            remove: remove
         };
 
         return service;
 
-        function getMessageCount() { return $q.when(72); }
+        function get(method) {
+            return $http.get(method).then(success).catch(fail);
+        }
 
-        function getCompanies() {
-            return $http.get('/api/v1/company')
-                .then(success)
-                .catch(fail);
+        function post(method, requestBody) {
+            return $http.post(method, requestBody).then(success).catch(fail);
+        }
 
-            function success(response) {
-                return response.data;
-            }
+        function remove(method, requestBody) {
+            return $http.delete(method, requestBody).then(success).catch(fail);
+        }
 
-            function fail(error) {
-                var msg = 'query for companies failed. ' + error.data.description;
-                logger.error(msg);
-                return $q.reject(msg);
-            }
+        function success(response) {
+            return response.data;
+        }
+
+        function fail(error) {
+            var msg = 'query for companies failed. ' + error.data.description;
+            logger.error(msg);
+            return $q.reject(msg);
         }
     }
 })();
