@@ -34,8 +34,7 @@ class UserController extends Controller {
 	}
 
 	public function login(Request $request) {
-		dd($request);
-		if (Auth::attempt(['email' => $request->input('email'), 'password' => Hash::make($request->input('password'))])) {
+		if (Auth::attempt(['email' => $request->get('email'), 'password' => Hash::make($request->get('password'))])) {
 			$user = Auth::getUser();
 			$response = array(
 				'operation' => true,
