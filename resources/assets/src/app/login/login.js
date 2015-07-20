@@ -22,7 +22,7 @@
         ////////////////
 
         function login() {
-            logger.info('login', 'In the login function');
+            //logger.info('login', 'In the login function');
             authentication.login(vm.user.email, vm.user.password).then(
                 function(data) {
                     vm.user = data.user;
