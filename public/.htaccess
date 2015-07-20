@@ -1,16 +1,15 @@
 <IfModule mod_rewrite.c>
-    <IfModule mod_negotiation.c>
-        Options -MultiViews
-    </IfModule>
-
+    Options +FollowSymLinks
     RewriteEngine On
+</IfModule>
 
-    # Redirect Trailing Slashes...
-    RewriteCond %{REQUEST_URI} !^/assets
-    RewriteRule ^(.*)/$ /$1 [L,R=301]
+# For all files not found in the file system, reroute the request to the
+# "index.php" front controller, keeping the query string intact
 
-    # Handle Front Controller...
-    RewriteCond %{REQUEST_FILENAME} !-d
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
     RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteRule ^ index.php [L]
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ index.php?/$1 [L]
 </IfModule>
