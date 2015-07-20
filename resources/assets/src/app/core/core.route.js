@@ -21,14 +21,6 @@
                     templateUrl: 'assets/app/core/404.html',
                     title: '404'
                 }
-            },
-            {
-                state: 'login',
-                config: {
-                    url: '/login',
-                    templateUrl: 'assets/app/login/login.html',
-                    title: 'login'
-                }
             }
         ];
     }
