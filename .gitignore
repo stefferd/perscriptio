@@ -10,3 +10,4 @@
 !LICENSE
 resources/assets/node_modules/*
 resources/assets/node_modules
+resources/assets/src/lib
